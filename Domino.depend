@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1539182716 source:c:\users\ra00218664\desktop\domino\funcoes.c
+
+1539182380 c:\users\ra00218664\desktop\domino\dados.h
+
+1539182596 source:c:\users\ra00218664\desktop\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+
+1539183472 source:c:\users\ra00218664\desktop\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1539182630 source:c:\users\ra00218664\desktop\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+
+1539182557 c:\users\ra00218664\desktop\domino\tela.h
+	"Dados.h"
+
