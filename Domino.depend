@@ -23,3 +23,27 @@
 1539182557 c:\users\ra00218664\desktop\domino\tela.h
 	"Dados.h"
 
+1540309666 source:x:\raul\progc\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1540309666 x:\raul\progc\domino\dados.h
+
+1540309666 source:x:\raul\progc\domino\funcoes.c
+
+1540309667 source:x:\raul\progc\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+
+1540311819 source:x:\raul\progc\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+
+1540311654 x:\raul\progc\domino\tela.h
+	"Dados.h"
+
