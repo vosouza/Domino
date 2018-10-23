@@ -13,5 +13,8 @@ typedef struct{
 
 void inicializarMesa(Tabuleiro M[28]);
 
+void inicializarMao(Tabuleiro mP1[], Tabuleiro mP2[]);
+
+void darMaos(Tabuleiro mP1[], Tabuleiro mP2[], Tabuleiro M[]);
 
 #endif

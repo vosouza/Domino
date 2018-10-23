@@ -32,19 +32,21 @@ void inicializarMao(Tabuleiro mP1[], Tabuleiro mP2[]){
 }
 
 void darMaos(Tabuleiro mP1[], Tabuleiro mP2[], Tabuleiro M[]){
-    int aux = 0, i = 0, k = 0;
-
-    while(aux < 14){
+    int aux = 0, i = 0, k = 0, cont = 0;
+    srand(time(NULL));
+    while(cont < 14){
         aux = rand()%28;
-        if(aux < 7 && M[aux].p != NULL){
+        if(cont < 7 && M[aux].p != NULL){
             mP1[i].p = M[aux].p;
             M[aux].p = NULL;
             i++;
+            cont++;
         }else{
-            if(aux >= 7 && M[aux].p != NULL){
+            if(cont >= 7 && M[aux].p != NULL){
                 mP2[k].p = M[aux].p;
                 M[aux].p = NULL;
                 k++;
+                cont++;
             }
         }
     }

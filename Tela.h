@@ -4,4 +4,6 @@
 
 void imprimirTabuleiro(Tabuleiro M[]);
 
+void imprimirMao(Tabuleiro mP[]);
+
 #endif
