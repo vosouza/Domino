@@ -3,6 +3,7 @@
 typedef struct{
     int d;
     int e;
+    int s;
 }Domino;
 
 

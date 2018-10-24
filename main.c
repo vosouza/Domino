@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include "Dados.h"
 #include "Tela.h"
+#include "Funcoes.h"
 
 int main()
 {
     Tabuleiro T[28];
     Tabuleiro mP1[28], mP2[28], M[28];
 
-    inicializarJogo(T[28], M[28], mP1[28], mP2[28]);
+    inicializarJogo(T, M, mP1, mP2, 1);
 
     return 0;
 }

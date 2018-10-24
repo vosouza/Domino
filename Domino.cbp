@@ -38,6 +38,7 @@
 		<Unit filename="Funcoes.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Funcoes.h" />
 		<Unit filename="Tela.c">
 			<Option compilerVar="CC" />
 		</Unit>
