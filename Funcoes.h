@@ -1,5 +1,5 @@
-#ifndef Tela_H
-#define Tela_H
+#ifndef Funcoes_H
+#define Funcoes_H
 #include "Dados.h"
 #include "Tela.h"
 
