@@ -23,12 +23,12 @@
 1539182557 c:\users\ra00218664\desktop\domino\tela.h
 	"Dados.h"
 
-1540397529 source:x:\domino\funcoes.c
+1540399043 source:x:\domino\funcoes.c
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
 
-1540396823 source:x:\domino\dados.c
+1540397821 source:x:\domino\dados.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
