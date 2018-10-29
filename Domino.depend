@@ -55,3 +55,36 @@
 	"Dados.h"
 	"Tela.h"
 
+1540692495 source:c:\users\cpudv\desktop\scriptsc\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1540692495 c:\users\cpudv\desktop\scriptsc\domino\dados.h
+
+1540762496 source:c:\users\cpudv\desktop\scriptsc\domino\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"stdio.h"
+
+1540692495 c:\users\cpudv\desktop\scriptsc\domino\tela.h
+	"Dados.h"
+
+1540692495 source:c:\users\cpudv\desktop\scriptsc\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1540692495 c:\users\cpudv\desktop\scriptsc\domino\funcoes.h
+	"Dados.h"
+	"Tela.h"
+
+1540692495 source:c:\users\cpudv\desktop\scriptsc\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+
