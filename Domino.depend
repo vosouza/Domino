@@ -23,21 +23,41 @@
 1539182557 c:\users\ra00218664\desktop\domino\tela.h
 	"Dados.h"
 
-1540399043 source:x:\domino\funcoes.c
+1540397013 D
+
+1540917281 source:x:\domino\funcoes.c
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
+	"stdio.h"
 
-1540397821 source:x:\domino\dados.c
+1540399225 source:x:\domino\dados.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<time.h>
 	"Dados.h"
 
-1540396823 x:\domino\dados.h
+1540397112 ceec0106b9abe641a177eec9c53c58f8d80a3
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	"Dados.h"
+	"Tela.h"
 
-1540396824 source:x:\domino\tela.c
+1540399225 x:\domino\dados.h
+
+1540913765 source:x:\domino\tela.c
 	<stdio.h>
 	"Dados.h"
 	"Tela.h"
@@ -45,14 +65,14 @@
 1540396824 x:\domino\tela.h
 	"Dados.h"
 
-1540397330 source:x:\domino\main.c
+1540912704 source:x:\domino\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
 
-1540397121 x:\domino\funcoes.h
+1540399225 x:\domino\funcoes.h
 	"Dados.h"
 	"Tela.h"
 

@@ -14,9 +14,11 @@ void inicializarMesa(Tabuleiro M[28]){
             f = k;
             aux->d = k;
             aux->e = f;
+            aux->s = aux->d + aux->e;
         }else{
             aux->d = k;
             aux->e  = f;
+            aux->s = aux->d + aux->e;
         }
         M[i].p = aux;
         aux = NULL;
