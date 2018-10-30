@@ -21,12 +21,18 @@ void imprimirMao(Tabuleiro mP[]){
 }
 
 int Menu(Tabuleiro T[28], Tabuleiro mP[28]){
-    printf("Tabuleiro:")
+    int cmd;
+    printf("Tabuleiro:");
     imprimirTabuleiro(T);
 
     printf("Mao Jogador:\n");
 
     imprimirMao(mP);
 
+    while(cmd > 3 || cmd < 1){
+        printf("Digite:\n\t1 - Para escolher peca\n\t2 - Para salvar\n\t3 - Para sair");
+        scanf("%d", &cmd);
+    }
 
+    return cmd;
 }
