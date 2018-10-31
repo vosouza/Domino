@@ -25,7 +25,7 @@
 
 1540397013 D
 
-1540917281 source:x:\domino\funcoes.c
+1540999054 source:x:\domino\funcoes.c
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
@@ -57,7 +57,7 @@
 
 1540399225 x:\domino\dados.h
 
-1540913765 source:x:\domino\tela.c
+1540999123 source:x:\domino\tela.c
 	<stdio.h>
 	"Dados.h"
 	"Tela.h"
@@ -65,7 +65,7 @@
 1540396824 x:\domino\tela.h
 	"Dados.h"
 
-1540912704 source:x:\domino\main.c
+1540999602 source:x:\domino\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Dados.h"

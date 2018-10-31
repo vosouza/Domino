@@ -12,5 +12,6 @@ int main()
    // inicializarJogo(T, M, mP1, mP2,1);
     inicializarJogo( T,  M,  mP1,  mP2, 1);
 
+
     return 0;
 }
