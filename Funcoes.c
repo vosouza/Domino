@@ -1,76 +1,133 @@
 #include "Dados.h"
 #include "Tela.h"
+#include "Funcoes.h"
 #include "stdio.h"
-int numPecas(Tabuleiro mp[]);
-void inicializarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo){
+void organizarPeca(Tabuleiro mp[],int crescente ,int esquerda);
+int agruparPecas(Tabuleiro pecas[]);
+void organizarSoma(Tabuleiro mp[]);
 
-    int x;
+void inicializarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo){
 
     inicializarMao(mP1, mP2);
     inicializarMesa(M);
 //    inicializarTabuleiro();
-    imprimirTabuleiro(M);
+//    imprimirTabuleiro(M);
 
     darMaos(mP1, mP2, M);
-    M[10].p = NULL;
-    M[11].p = NULL;
-    M[20].p = NULL;
-    M[21].p = NULL;
-    printf("\n");
-    agruparPecas(M);
-    imprimirTabuleiro(M);
+    imprimirMao(mP1);
 
-   // organizarSoma(mP1, 1, 1);
-    //organizarSoma(mP2, 1, 1);
+    printf("\n\n");
+    organizarPeca(mP1,1,1);
+    organizarSoma(mP1);
+    imprimirMao(mP1);
 
-   /* if()
-    colocarPeca(T, pecaIni);
-
-    if(Modo == 1){
-        JogarPc(T, M, mP1, mP2);
-    }else{
-//        JogarPL(T, M, mP1, mP2);
-    }*/
 }
+/*
+    Funcão para organizar as peças em ordem crescente ou decrescente
+    considerando o lado esquedo ou direito das peças
 
-void JogarPc(Tabuleiro T, Tabuleiro M, Tabuleiro mP1, Tabuleiro mP2){
-    int cmd;
-    do{
-        cmd = Menu();
+    entrada: Tabuleiro mp, crescente(inteiro), esquerda(inteiro)
+    saida: Tabuleiro mp
 
-    }while(cmd != 0);
-}
-
-void organizarMao(Tabuleiro mp[],int crescente, int esquerda){
-    int num = 28;
-    if(crescente){
-        if(esquerda){
-
+*/
+void organizarPeca(Tabuleiro mp[],int crescente ,int esquerda){
+    int j,k,fim;
+    Tabuleiro peca;
+    peca.p = NULL;
+    fim = agruparPecas(mp);
+    if(crescente == 1){
+        if(esquerda == 1){
+           for(j=0;j<fim-1;j++){
+                for(k=0;k<fim-1;k++){
+                    if(mp[k].p->e > mp[k+1].p->e){
+                        peca.p = mp[k].p;
+                        mp[k].p = mp[k+1].p;
+                        mp[k+1].p = peca.p;
+                    }
+                }
+           }
+        }else if(esquerda == 0){
+            for(j=0;j<fim-1;j++){
+                for(k=0;k<fim-1;k++){
+                    if(mp[k].p->d > mp[k+1].p->d){
+                        peca.p = mp[k].p;
+                        mp[k].p = mp[k+1].p;
+                        mp[k+1].p = peca.p;
+                    }
+                }
+           }
+        }
+    }else if (crescente == 0){
+        if(esquerda == 1){
+           for(j=0;j<fim-1;j++){
+                for(k=0;k<fim-1;k++){
+                    if(mp[k].p->e < mp[k+1].p->e){
+                        peca.p = mp[k].p;
+                        mp[k].p = mp[k+1].p;
+                        mp[k+1].p = peca.p;
+                    }
+                }
+           }
+        }else if(esquerda == 0){
+            for(j=0;j<fim-1;j++){
+                for(k=0;k<fim-1;k++){
+                    if(mp[k].p->d < mp[k+1].p->d){
+                        peca.p = mp[k].p;
+                        mp[k].p = mp[k+1].p;
+                        mp[k+1].p = peca.p;
+                    }
+                }
+           }
         }
     }
 
 }
+/*
+    Funcão para agrupar os dados do vetor retirando as variaveis nulas
+    que estão entre as variaveis nao nulas
+    A funcao tambem devolve o numero de pecas que o vetor contem
 
-int numPecas(Tabuleiro mp[]){
-    int num, pcs=0;
-    for(num=0;num<28;num++){
-        if(mp[num].p != NULL){
-            pcs++;
+    entrada: Tabuleiro pecas
+    saida: int i
+
+*/
+int agruparPecas(Tabuleiro pecas[]){
+    int x,i = 0;
+    Tabuleiro aux[28];
+    for(x=0;x<28;x++){
+        if(pecas[x].p != NULL){
+           aux[i].p = pecas[x].p;
+           i++;
         }
-
     }
-    return pcs;
+    for(x=0;x<=i-1;x++){
+        pecas[x].p = aux[x].p;
+    }
+    return i;
 }
 
-void agruparPecas(Tabuleiro mp[]){
-    int num=0, vazio=0;
-    Tabuleiro aux;
-    for(num=0;num<28;num++){
-        if(mp[num].p == NULL){
-            mp[num].p = mp[num+1].p;
-            mp[num+1].p = NULL;
+/*
+    Funcão para organizar as peças em ordem crescente considerando a somas dos dois lados
+    da peça de domino
+
+    entrada: Tabuleiro mp
+    saida: Tabuleiro mp
+
+*/
+void organizarSoma(Tabuleiro mp[]){
+    int j,k,fim;
+    Tabuleiro peca;
+    peca.p = NULL;
+    fim = agruparPecas(mp);
+    for(j=0;j<fim-1;j++){
+        for(k=0;k<fim-1;k++){
+            if(mp[k].p->s < mp[k+1].p->s){
+                peca.p = mp[k].p;
+                mp[k].p = mp[k+1].p;
+                mp[k+1].p = peca.p;
+
+            }
         }
-
     }
-
 }
+
