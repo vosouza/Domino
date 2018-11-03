@@ -12,10 +12,14 @@ void inicializarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP
     imprimirTabuleiro(M);
 
     darMaos(mP1, mP2, M);
+    M[10].p = NULL;
+    M[11].p = NULL;
+    M[20].p = NULL;
+    M[21].p = NULL;
+    printf("\n");
+    agruparPecas(M);
+    imprimirTabuleiro(M);
 
-    x = numPecas(mP1);
-    printf("\n\n%d\n\n",x);
-    imprimirTabuleiro(mP1);
    // organizarSoma(mP1, 1, 1);
     //organizarSoma(mP2, 1, 1);
 
@@ -52,12 +56,21 @@ int numPecas(Tabuleiro mp[]){
     for(num=0;num<28;num++){
         if(mp[num].p != NULL){
             pcs++;
-            printf("(%d..%d)",mp[num].p->e,mp[num].p->d);
         }
 
     }
     return pcs;
 }
 
-void agruparPecas(){
+void agruparPecas(Tabuleiro mp[]){
+    int num=0, vazio=0;
+    Tabuleiro aux;
+    for(num=0;num<28;num++){
+        if(mp[num].p == NULL){
+            mp[num].p = mp[num+1].p;
+            mp[num+1].p = NULL;
+        }
+
+    }
+
 }
