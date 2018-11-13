@@ -1,0 +1,217 @@
+# depslib dependency file v1.0
+1539182716 source:c:\users\ra00218664\desktop\domino\funcoes.c
+
+1539182380 c:\users\ra00218664\desktop\domino\dados.h
+
+1539182596 source:c:\users\ra00218664\desktop\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+
+1539183472 source:c:\users\ra00218664\desktop\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1539182630 source:c:\users\ra00218664\desktop\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+
+1539182557 c:\users\ra00218664\desktop\domino\tela.h
+	"Dados.h"
+
+1541603377 source:x:\domino\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+
+1541599552 source:x:\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1541599552 x:\domino\dados.h
+
+1541604031 source:x:\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1541599552 x:\domino\tela.h
+	"Dados.h"
+
+1541599552 source:x:\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1541603275 x:\domino\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1541532892 source:d:\git\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1541532891 d:\git\domino\dados.h
+
+1541531618 source:d:\git\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1541553010 d:\git\domino\tela.h
+	"Dados.h"
+
+1541553026 d:\git\domino\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1541553039 source:d:\git\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1541552864 source:d:\git\domino\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+
+1541592810 source:c:\users\pesquisa\desktop\domino-master\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1541592810 c:\users\pesquisa\desktop\domino-master\dados.h
+
+1541595310 source:c:\users\pesquisa\desktop\domino-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1541594746 c:\users\pesquisa\desktop\domino-master\tela.h
+	"Dados.h"
+
+1541595291 c:\users\pesquisa\desktop\domino-master\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1541595825 source:c:\users\pesquisa\desktop\domino-master\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1541595573 source:c:\users\pesquisa\desktop\domino-master\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+
+1542052035 source:c:\users\vitor\documents\progs\domino\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1542052035 c:\users\vitor\documents\progs\domino\dados.h
+
+1542053869 source:c:\users\vitor\documents\progs\domino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1542054056 c:\users\vitor\documents\progs\domino\tela.h
+	"Dados.h"
+
+1542054041 c:\users\vitor\documents\progs\domino\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1542054072 source:c:\users\vitor\documents\progs\domino\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1542054407 source:c:\users\vosouza\desktop\domino-master\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1542054407 c:\users\vosouza\desktop\domino-master\dados.h
+
+1542054407 source:c:\users\vosouza\desktop\domino-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1542054407 c:\users\vosouza\desktop\domino-master\tela.h
+	"Dados.h"
+
+1542121312 c:\users\vosouza\desktop\domino-master\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1542054407 source:c:\users\vosouza\desktop\domino-master\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1542123614 source:c:\users\vosouza\desktop\domino-master\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
