@@ -26,7 +26,7 @@ void imprimirMao(Tabuleiro mP[]){
 }
 
 int Menu(Tabuleiro T[28], Tabuleiro mP[28]){
-    int cmd;
+    int cmd = 0;
     printf("Tabuleiro:\n");
     imprimirTabuleiro(T);
 
@@ -34,8 +34,8 @@ int Menu(Tabuleiro T[28], Tabuleiro mP[28]){
 
     imprimirMao(mP);
 
-    while(cmd > 4 || cmd < 1){
-        printf("\nDigite:\n\t1 - Para jogar\n\t2 - Para organizar pecas\n\t3 - Para salvar\n\t4 - Para sair\n");
+    while(cmd > 5 || cmd < 1){
+        printf("\nDigite:\n\t1 - Para jogar\n\t2 - Para organizar pecas\n\t3 - Mostrar quantas p oponete tem\n\t4 - Para salvar\n\t5 - Para sair\n");
         fflush(stdin);
         scanf("%d", &cmd);
         fflush(stdin);
@@ -97,6 +97,8 @@ int modoJogo(){
 }
 
 void organizarPecaTela(int *ordem, int *direcao){
+    *ordem = 0;
+    *direcao = 0;
     while(*ordem > 2 || *ordem < 1){
         printf("\n\tOrdena de forma:\n\t1 - Decrescente\n\t2 - Crescente\n");
         scanf("%d", ordem);
@@ -121,3 +123,5 @@ void salvarJogoTela(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2
 
     salvarJogo(T, M, mP1, mP2, Modo, turno, nomeArq);
 }
+
+void mostrarMaoOT(Tabuleiro mP2[]){}

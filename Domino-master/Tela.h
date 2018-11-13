@@ -24,4 +24,6 @@ void organizarPecaTela(int *ordem, int *direcao);
 
 void salvarJogoTela(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo, int turno);
 
+void mostrarMaoOT(Tabuleiro mP2[]);
+
 #endif

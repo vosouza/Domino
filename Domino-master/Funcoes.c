@@ -7,23 +7,34 @@
 #include <stdio.h>
 #include <string.h>
 
+/*
+** Inicializa o jogo
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro M[] - Vetor de pecas de domino. A mesa que contem todas as pecas a serem compradas
+**      Tabuleiro mP1[] - Vetor de pecas de domino. A mao do player 1
+**      Tabuleiro mP2[] - Vetor de pecas de domino. A mao do player 2
+**      int Modo - Inteiro que indicara o modo de jogo (1  = SinglePlayer ou 2 = MultiPlayer)
+**      int Lode - Indica se esta carregando um jogo antigo ou nao
+**
+** Retorno:
+**      nenhum
+*/
+
 void inicializarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo, int Load){
     if(Load == 0){
         inicializarMao(mP1, mP2);
         inicializarMesa(M);
         inicializarTabuleiro(T);
-        //inicializarTabuleiro();
         darMaos(mP1, mP2, M);
         corrigirOrdem(M);
     }else{
         inicializarMao(mP1, mP2);
         inicializarMesa(M);
         inicializarTabuleiro(T);
-        Modo = loadGame( T,  M,  mP1,  mP2);
+        Modo = loadGame( T, M, mP1, mP2);
     }
-
-    /*organizarSoma(mP1, 1, 1); // 1 - Crescente / 1 - Num esquerdo
-    organizarSoma(mP2, 1, 1);*/
 
     //colocarPeca(T, pecaIni);
 
@@ -37,6 +48,20 @@ void inicializarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP
         JogarPL(T, M, mP1, mP2, Modo);
     }
 }
+
+/*
+** Menu para o modo MultiPlayer
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro M[] - Vetor de pecas de domino. A mesa que contem todas as pecas a serem compradas
+**      Tabuleiro mP1[] - Vetor de pecas de domino. A mao do player 1
+**      Tabuleiro mP2[] - Vetor de pecas de domino. A mao do player 2
+**      int Modo - Inteiro que indicara o modo de jogo (1  = SinglePlayer ou 2 = MultiPlayer)
+**
+** Retorno:
+**      nenhum
+*/
 
 void JogarPL(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo){
     int cmd = -1, turno = 0;
@@ -73,6 +98,7 @@ void JogarPL(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int
             }
         }else{
             //system("cls");
+            cmd = -1;
             imprimirTurno(turno);
             cmd = Menu(T, mP2);
             switch(cmd){
@@ -100,16 +126,30 @@ void JogarPL(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int
     }while(cmd != 4);
 }
 
+/*
+** Menu para o modo SinglePlayer
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro M[] - Vetor de pecas de domino. A mesa que contem todas as pecas a serem compradas
+**      Tabuleiro mP1[] - Vetor de pecas de domino. A mao do player 1
+**      Tabuleiro mP2[] - Vetor de pecas de domino. A mao do player 2
+**      int Modo - Inteiro que indicara o modo de jogo (1  = SinglePlayer ou 2 = MultiPlayer)
+**
+** Retorno:
+**      nenhum
+*/
+
 void JogarPc(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int Modo){
     int cmd, turno = 0;
     int ordem = 0, direcao = 0;
     bool insPeca = false;
     int pos[2];
     do{
-        cmd = -1;
         turno++;
         if(turno%2 == 0){
             //system("cls");
+            cmd = -1;
             cmd = Menu(T, mP1);
             switch(cmd){
                 case(1):
@@ -128,6 +168,9 @@ void JogarPc(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int
                     turno--;
                 break;
                 case(3):
+                    mostrarMaoOT(mP2);
+                break;
+                case(4):
                     salvarJogoTela(T, M, mP1, mP2, turno, Modo);
                     turno--;
                 break;
@@ -144,7 +187,15 @@ void JogarPc(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], int
     }while(cmd != 4);
 }
 
-
+/*
+** Corrige os vetores agrupando os ponteiros, eliminando os NULL entre si
+**
+** Parâmetros:
+**      Tabuleiro X[] - Um vetor de ponteiros do tipo Domino
+**
+** Retorno:
+**      nenhum
+*/
 
 void corrigirOrdem(Tabuleiro X[]){
     int i = 0, j = 0;
@@ -163,6 +214,19 @@ void corrigirOrdem(Tabuleiro X[]){
     }
 }
 
+/*
+** Insere uma paca da mao do jogador no tabuleiro
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro mP[] - Vetor de pecas de domino. A mao do player
+**      int posP - Inteiro que indica a posicao pa peca na mao do jogador
+**      int posT - Inteiro que indica a posicao em que a peca sera inserida (1 = Inicio do Tabuleiro ou 2 = Fim do Tabuleiro)
+**
+** Retorno:
+**      nenhum
+*/
+
 void inserirPeca(Tabuleiro T[], Tabuleiro mP[], int posP, int posT){
     if(posT == 1 && (mP[posP].p->d == T[0].p->e || mP[posP].p->e == T[0].p->e)){
         if(mP[posP].p->d != T[0].p->e || mP[posP].p->e == T[0].p->e)
@@ -173,7 +237,7 @@ void inserirPeca(Tabuleiro T[], Tabuleiro mP[], int posP, int posT){
         mP[posP].p = NULL;
         corrigirOrdem(mP);
     }else{
-        if(mP[posP].p->e != T[0].p->d || mP[posP].p->d == T[0].p->d)
+        if(posT == 2 && (mP[posP].p->e != T[tamTotal(T) - 1].p->d || mP[posP].p->d == T[tamTotal(T) - 1].p->d))
             invertePeca(mP, posP);
 
         T[tamTotal(T)].p = mP[posP].p;
@@ -182,22 +246,33 @@ void inserirPeca(Tabuleiro T[], Tabuleiro mP[], int posP, int posT){
     }
 }
 
+/*
+** Checa se existe uma peca valida na mao do jogador a ser inserida no tabuleiro
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro mP[] - Vetor de pecas de domino. A mao do player
+**
+** Retorno:
+**      True se existe peca ou false se nao existir
+*/
+
 bool checarMao(Tabuleiro T[], Tabuleiro mP[]){
     int tam = tamTotal(T);
 
     if(tam == 1){
         for(int i = 0; i < 28; i++){
-            if(mP[i].p != NULL && ((mP[i].p->e == T[0].p->d) || (mP[i].p->d == T[0].p->e)))
+            if(mP[i].p != NULL && (((mP[i].p->e == T[0].p->d) || (mP[i].p->d == T[0].p->e)) || ((mP[i].p->d == T[0].p->d) || (mP[i].p->e == T[0].p->e))))
                 return true;
         }
     }else{
         if(tam > 1){
             for(int i = 0; i < 28; i++){
                 if(mP[i].p != NULL){
-                    if(mP[i].p->d == T[0].p->e)
+                    if(mP[i].p->d == T[0].p->e || mP[i].p->e == T[0].p->e)
                         return true;
                     else{
-                        if(mP[i].p->e == T[tam - 1].p->d)
+                        if(mP[i].p->e == T[tam - 1].p->d || mP[i].p->d == T[tam - 1].p->d)
                             return true;
                     }
                 }
@@ -208,19 +283,35 @@ bool checarMao(Tabuleiro T[], Tabuleiro mP[]){
     return false;
 }
 
+/*
+** Insere a maior peca com o mesmo numero do jogador 1 ou a maior peca
+**
+** Parâmetros:
+**      Tabuleiro T[] - Vetor de pecas de domino. O tabuleiro do jogo
+**      Tabuleiro mP[] - Vetor de pecas de domino. A mao do player
+**
+** Retorno:
+**      nenhum
+*/
 
 void inserirPimeiraPeca(Tabuleiro T[], Tabuleiro mP1[]){
+    int nAux = -1, pos = -1;
     for(int i = 0; i < 28; i++){
-        if(mP1[i].p != NULL && mP1[i].p->d == mP1[i].p->e/*nAux < mP1[i].p->s*/){
-            T[0].p = mP1[i].p;
-            mP1[i].p = NULL;
-            corrigirOrdem(mP1);
-            return;
+        if(mP1[i].p != NULL && mP1[i].p->d == mP1[i].p->e && mP1[i].p->d > nAux){
+                nAux = mP1[i].p->d;
+                pos = i;
         }
     }
 
+    if(pos != -1){
+        T[0].p = mP1[pos].p;
+        mP1[pos].p = NULL;
+        corrigirOrdem(mP1);
+        return;
+    }
+
     Domino *aux;
-    int nAux = -1, pos = -1;
+    nAux = -1;
     for(int i = 0; i < 28; i++){
         if(mP1[i].p != NULL && nAux < mP1[i].p->s){
             pos = i;
@@ -241,7 +332,7 @@ bool posValida(Tabuleiro T[], Tabuleiro mP[], int posP, int posT){
         if(posT == 1 && tamTotal(T) > 1 && (mP[posP].p->d == T[0].p->e || mP[posP].p->e == T[0].p->e))
             return true;
         else{
-            if(mP[posP].p->e == T[tamTotal(T) - 1].p->d || mP[posP].p->d == T[tamTotal(T) - 1].p->d)
+            if(posT == 2 && (mP[posP].p->e == T[tamTotal(T) - 1].p->d || mP[posP].p->d == T[tamTotal(T) - 1].p->d))
                 return true;
         }
     }
@@ -351,12 +442,8 @@ void salvarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], 
 
     fprintf(arq, "%d", Modo); // Primeiro salvamos em que modo estamos
     fprintf(arq, "\n");
-    fprintf(arq, "----------");
-    fprintf(arq, "\n");
 
     fprintf(arq, "%d", turno); // Depois salvamos em que turno estamos
-    fprintf(arq, "\n");
-    fprintf(arq, "----------");
     fprintf(arq, "\n");
 
     for(int i = 0; i < tamTotal(T); i++){ // Depois salvamos as pecas do tabuleiro
@@ -387,40 +474,59 @@ void salvarJogo(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[], 
          fprintf(arq, "%d %d", mP2[i].p->e, mP2[i].p->d);
          fprintf(arq, "\n");
     }
-
+    fprintf(arq, "404 404");
     fclose(arq);
 }
-
 int loadGame(Tabuleiro T[], Tabuleiro M[], Tabuleiro mP1[], Tabuleiro mP2[]){
-    char *nomeArq = malloc(sizeof(char)*100);
-    char *aux = malloc(sizeof(char)*100);
-    Tabuleiro peca;
     FILE *arq;
-    int modo = 0, esquerda=0, direita=0,turno=0, contador=0;
+    char *nomeArq = malloc(sizeof(char)*100);
+    int modo=0, turno=0, esquerda=0, direita=0;
 
-    printf("Digite o nome do ultimo Save File para ser carregado: ");
+    printf("\nDigite o nome do Save File:");
     scanf("%s",nomeArq);
 
-    arq = fopen(nomeArq,"rb");
-
-    if(arq == NULL){
-        printf("Esse arquivo nao existe, tente novamente!");
-    }
+    arq = fopen(nomeArq, "r");
 
     fscanf(arq,"%d",&modo);
-    fscanf(arq,"%s", aux);
     fscanf(arq,"%d",&turno);
-    fscanf(arq,"%s", aux);
-    while(esquerda != 404 && direita != 404){
-            fscanf(arq,"%d %d",esquerda,direita);
-            peca.p->d = direita;
-            peca.p->e = esquerda;
-            T[contador].p->d = peca.p->d;
-            T[contador].p->e = peca.p->e;
-            contador++;
+
+    //Pegar o Tabuleiro
+    fscanf(arq,"%d %d",&esquerda, &direita);
+    for(int i=0;esquerda!=404 && direita!=404;i++){
+        T[i].p = malloc(sizeof(Tabuleiro));
+        T[i].p->e = esquerda;
+        T[i].p->d = direita;
+        T[i].p->s = esquerda + direita;
+        fscanf(arq,"%d %d",&esquerda, &direita);
     }
-    return 0;
+
+    fscanf(arq,"%d %d",&esquerda, &direita);
+    for(int i=0;esquerda!=404 && direita!=404;i++){
+        M[i].p = malloc(sizeof(Tabuleiro));
+        M[i].p->e = esquerda;
+        M[i].p->d = direita;
+        M[i].p->s = esquerda + direita;
+        fscanf(arq,"%d %d",&esquerda, &direita);
+    }
+
+    fscanf(arq,"%d %d",&esquerda, &direita);
+    for(int i=0;esquerda!=404 && direita!=404;i++){
+        mP1[i].p = malloc(sizeof(Tabuleiro));
+        mP1[i].p->e = esquerda;
+        mP1[i].p->d = direita;
+        mP1[i].p->s = esquerda + direita;
+        fscanf(arq,"%d %d",&esquerda, &direita);
+    }
+
+    fscanf(arq,"%d %d",&esquerda, &direita);
+    for(int i=0;esquerda!=404 && direita!=404;i++){
+        mP2[i].p = malloc(sizeof(Tabuleiro));
+        mP2[i].p->e = esquerda;
+        mP2[i].p->d = direita;
+        mP2[i].p->s = esquerda + direita;
+        fscanf(arq,"%d %d",&esquerda, &direita);
+    }
+    fclose(arq);
+
+    return modo;
 }
-
-
-

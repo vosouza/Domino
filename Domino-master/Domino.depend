@@ -174,38 +174,79 @@
 	"Funcoes.h"
 	<stdbool.h>
 
-1542054407 source:c:\users\vosouza\desktop\domino-master\dados.c
+1542054407 source:c:\users\ra00218664\desktop\domino-master\dados.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<time.h>
 	"Dados.h"
 
-1542054407 c:\users\vosouza\desktop\domino-master\dados.h
+1542054407 c:\users\ra00218664\desktop\domino-master\dados.h
 
-1542054407 source:c:\users\vosouza\desktop\domino-master\main.c
+1542124247 source:c:\users\ra00218664\desktop\domino-master\funcoes.c
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1542122484 c:\users\ra00218664\desktop\domino-master\tela.h
+	"Dados.h"
+
+1542054407 c:\users\ra00218664\desktop\domino-master\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1542054407 source:c:\users\ra00218664\desktop\domino-master\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
 
-1542054407 c:\users\vosouza\desktop\domino-master\tela.h
-	"Dados.h"
-
-1542121312 c:\users\vosouza\desktop\domino-master\funcoes.h
-	"Dados.h"
-	"Tela.h"
-	<stdbool.h>
-
-1542054407 source:c:\users\vosouza\desktop\domino-master\tela.c
+1542124031 source:c:\users\ra00218664\desktop\domino-master\tela.c
 	<stdio.h>
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
 	<stdbool.h>
 
-1542123614 source:c:\users\vosouza\desktop\domino-master\funcoes.c
+1542132690 source:c:\users\cpudv\desktop\domino-master\dados.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Dados.h"
+
+1542132690 c:\users\cpudv\desktop\domino-master\dados.h
+
+1542132690 source:c:\users\cpudv\desktop\domino-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+
+1542132690 c:\users\cpudv\desktop\domino-master\tela.h
+	"Dados.h"
+
+1542134006 c:\users\cpudv\desktop\domino-master\funcoes.h
+	"Dados.h"
+	"Tela.h"
+	<stdbool.h>
+
+1542132690 source:c:\users\cpudv\desktop\domino-master\tela.c
+	<stdio.h>
+	"Dados.h"
+	"Tela.h"
+	"Funcoes.h"
+	<stdbool.h>
+
+1542135206 source:c:\users\cpudv\desktop\domino-master\funcoes.c
 	"Dados.h"
 	"Tela.h"
 	"Funcoes.h"
